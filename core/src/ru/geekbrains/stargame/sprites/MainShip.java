@@ -1,6 +1,8 @@
 package ru.geekbrains.stargame.sprites;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
@@ -12,7 +14,7 @@ import ru.geekbrains.stargame.pool.BulletPool;
 
 
 public class MainShip extends Sprite {
-
+    Sound sound=Gdx.audio.newSound(Gdx.files.internal("data/mysound.mp3"));
     private static final int INVALID_POINTER = -1;
 
     private Vector2 v0 = new Vector2(0.5f, 0f);
@@ -73,6 +75,7 @@ public class MainShip extends Sprite {
                 break;
             case Input.Keys.UP:
                 shoot();
+                sound.play(1.0f);
                 break;
         }
     }

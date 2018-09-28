@@ -27,7 +27,7 @@ public class GameScreen extends Base2DScreen {
     TextureAtlas atlas;
 
     Music music=Gdx.audio.newMusic(Gdx.files.internal("data/mymusic.mp3"));
-    Sound sound=Gdx.audio.newSound(Gdx.files.internal("data/mysound.mp3"));
+
 
     Star[] star;
 
@@ -123,7 +123,7 @@ public class GameScreen extends Base2DScreen {
     @Override
     public boolean keyUp(int keycode) {
         mainShip.keyUp(keycode);
-        sound.play(1.0f);
+
         return super.keyUp(keycode);
     }
 
