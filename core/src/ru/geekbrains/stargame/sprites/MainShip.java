@@ -76,6 +76,7 @@ public class MainShip extends Sprite {
             case Input.Keys.UP:
                 shoot();
                 sound.play(1.0f);
+
                 break;
         }
     }
@@ -154,4 +155,8 @@ public class MainShip extends Sprite {
         bullet.set(this, bulletRegion, pos, bulletV, 0.01f, worldBounds, 1);
     }
 
+    public void dispose() {
+        sound.dispose();
+
+    }
 }
