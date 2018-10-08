@@ -19,27 +19,6 @@ public class StarGame extends ApplicationAdapter {
 		img = new Texture("badlogic.jpg");
 		region = new TextureRegion(img, 100, 100, 150, 150);
 
-		Vector2 v1 = new Vector2(1,3);
-		Vector2 v2 = new Vector2(1,2);
-		v1.add(v2);
-		System.out.println("v1 x = " + v1.x + " v1 y = " + v1.y);
-
-		v1.set(6,2);
-		v2.set(2,3);
-		v1.sub(v2);
-		System.out.println("v1 x = " + v1.x + " v1 y = " + v1.y);
-
-		System.out.println("v1 len = " + v1.len());
-		v1.scl(0.5f);
-		System.out.println("v1 x = " + v1.x + " v1 y = " + v1.y);
-		System.out.println("v1 len = " + v1.len());
-
-		System.out.println("v1.dot(v2) = " + v1.dot(v2));
-		System.out.println("v1 len = " + v1.len());
-		v1.cpy().nor();
-		System.out.println("v1 x = " + v1.x + " v1 y = " + v1.y);
-		System.out.println("v1 len = " + v1.len());
-
 	}
 
 	@Override
@@ -47,7 +26,9 @@ public class StarGame extends ApplicationAdapter {
 		Gdx.gl.glClearColor(1, 0.4f, 0.6f, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		batch.begin();
+		batch.setColor(1,1,1,1);
 		batch.draw(img, 100, 100);
+		batch.setColor(0.4f,0.6f,1,1);
 		batch.draw(region, 0, 0);
 		batch.end();
 	}
